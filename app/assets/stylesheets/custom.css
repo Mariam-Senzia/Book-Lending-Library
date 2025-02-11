@@ -1,0 +1,329 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.nav-left a{
+    text-decoration: none;
+    color: #29335C
+}
+
+.nav-right {
+    margin-top: 1.7rem;
+}
+
+.nav-right a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-right a:hover {
+    color: #007BFF;
+    text-decoration: underline; 
+}
+
+.divider {
+    height: 1px; 
+    background-color: #CCCCCC; 
+}
+
+/* Hompage */
+.available-book-title {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.book-container {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px; 
+    margin-bottom: 3rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.book-image {
+    height: 20vh;
+    width: 8vw;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.book-card {
+    display: flex;
+    border: 1px solid;
+    border-color:#CCCCCC;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-details {
+    flex: 1;
+    padding-left: 20px;
+    margin-top: -1.1rem;
+}
+
+.available-status {
+    color:#007bff
+}
+
+.view-details-button {
+    margin-top: 2rem;
+}
+
+.book-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Book Details */
+.book-details-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    border: 1px solid;
+    width: 30vw;
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border-color:#CCCCCC;
+}
+
+.book-details-image { 
+    height: 42vh;
+    width: 15vw;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+}
+
+.login-details-button {
+    color: #007bff;
+}
+
+.borrow-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    width: 27%;
+    font-size: medium;
+    margin-top: 1rem;
+}
+
+.book-borrowed {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 5px; 
+}
+
+.borrow-login {
+    background-color: #d1ecf1; 
+    color: #0c5460; 
+    padding: 1rem;
+    border-radius: 5px; 
+    margin: 1rem 0; 
+}
+
+.return-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    width: 27%;
+    font-size: medium;
+    margin-top: 1rem;
+}
+
+/* Login */
+.login-container {
+    border: 0.5px solid;
+    border-color:#CCCCCC;
+    padding: 3rem;
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
+}
+
+.login-title {
+    text-align: center;
+}
+
+.login-email {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+
+.login-email input[type="email"] {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px; 
+    border: 0.5px solid #ADADAD
+}
+
+.login-password {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+.login-password input[type="password"] {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px; 
+    border: 0.5px solid #ADADAD
+}
+
+.login-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    font-size: medium;
+    margin-top: 1rem;
+    width:100%;
+    margin-top: 1.5rem;
+}
+
+.login-to-signup {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.login-to-signup a{
+    color: #007bff;
+}
+
+/* Sign Up */
+.signup-container {
+    border: 0.5px solid;
+    border-color:#CCCCCC;
+    padding: 3rem;
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
+}
+
+.signup-title {
+    text-align: center;
+}
+
+.signup-name {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 0.5rem;
+}
+
+.signup-name input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px; 
+    border: 0.5px solid #ADADAD
+}
+
+.signup-email {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+.signup-email input[type="email"] {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px; 
+    border: 0.5px solid #ADADAD
+}
+
+.signup-password {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+.signup-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    font-size: medium;
+    margin-top: 1.5rem;
+    width:100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.signup-password input[type="password"] {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px; 
+    border: 0.5px solid #ADADAD
+}
+
+/* Profile */
+.return-profile-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    font-size: medium;
+    margin-top: 0.5rem;
+}
+
+.profile-title {
+    text-align: center;
+    margin-top: 2rem;
+}
+.profile-books-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-book-card {
+    display: flex;
+    border: 1px solid;
+    border-color:#CCCCCC;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-book-image {
+    height: 20vh;
+    width: 10vw;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: top;
+}

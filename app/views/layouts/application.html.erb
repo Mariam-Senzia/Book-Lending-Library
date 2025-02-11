@@ -22,6 +22,20 @@
   </head>
 
   <body>
+    <nav class='navbar'>
+      <div class='nav-left'>
+        <h1><%= link_to "LendingLibrary", root_path, class: "nav-logo" %> </h1>
+      </div>
+
+      <div class='nav-right'>
+          <% if user_signed_in? %>
+            <%= link_to "My Profile", profile_path, class: "nav-link" %>
+          <% else %>
+            <%= link_to "Login", login_path, class: "nav-link" %>
+          <% end %>
+      </div>
+    </nav>
+    <div class='divider'></div>
     <%= yield %>
   </body>
 </html>

@@ -34,6 +34,15 @@ class AuthController < ApplicationController
         end
     end
 
+    def new_signup
+        render :signup
+    end
+      
+    def new_login
+        render :login
+    end
+      
+
     private
 
         def user_params

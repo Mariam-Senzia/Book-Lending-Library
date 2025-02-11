@@ -23,6 +23,7 @@ class BooksController < ApplicationController
   def borrow
     @book = Book.find_by(id: params[:id])
     if @book.available
+      due_date = 2.weeks.from_now
       Borrowing.create(user: current_user, book: @book, due_date: 2.weeks.from_now)
       @book.update(available: false)
       respond_to do |format|

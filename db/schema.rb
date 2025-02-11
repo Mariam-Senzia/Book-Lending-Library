@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_10_124749) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_11_141058) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
     t.string "isbn"
-    t.boolean "available"
+    t.boolean "available", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.string "genre"
+    t.string "image_url"
   end
 
   create_table "borrowings", force: :cascade do |t|

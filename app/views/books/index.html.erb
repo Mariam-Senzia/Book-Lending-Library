@@ -1,2 +1,21 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h2 class='available-book-title'>Available Books</h2>
+
+<div class="book-container">
+    <% @books.each do |book| %>
+        <div class='book-card'>
+            <div class="book-image-container">
+                <img src="<%= book.image_url %>" alt="<%= book.title %> cover" class="book-image">
+            </div>
+            <div class="book-details">
+                <h3><%= book.title %></h3>
+                <p>Author: <%= book.author %></p>
+                <p>Genre: <%= book.genre %></p>
+                <p class="available-status">Status: <%= book.borrowed? ? 'Borrowed' : 'Available' %></p>
+               
+                <div class='view-details-button'>
+                <%= link_to 'View Details', book_path(book), class: 'book-btn'  %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>

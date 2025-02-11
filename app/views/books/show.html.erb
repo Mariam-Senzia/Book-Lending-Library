@@ -1,2 +1,29 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class='book-details-container'>
+    <div>
+        <img src="<%= @book.image_url %>" alt="<%= @book.title %> cover" class="book-details-image">
+    </div>
+
+    <div class="book-info">
+        <h2><%= @book.title %></h2>
+        <p><strong>Description:</strong> <%= @book.description %></p>
+        <p><strong>Author:</strong> <%= @book.author %></p>
+        <p><strong>Genre:</strong> <%= @book.genre %></p>
+        <p><strong>ISBN:</strong> <%= @book.isbn %></p>
+        <p><strong>Status:</strong> <%= @book.borrowed? ? 'Borrowed' : 'Available' %></p>
+
+        <% if user_signed_in? %>
+            <% if @book.available %>
+                <%= button_to 'Borrow Book', borrow_book_path(@book), method: :post, class: 'borrow-button' %>
+            <% else %>
+                <% borrowing = Borrowing.find_by(user: current_user, book: @book) %>
+                <% if borrowing %>
+                    <%= button_to 'Return Book', return_book_borrowing_path(borrowing), method: :delete, class: 'return-button' %>
+                <% else %>
+                    <p class='book-borrowed'><strong>Oops!</strong> This book is currently borrowed. Please check out our other available books!</p>  
+                <% end %>
+            <% end %>
+            <% else %>
+            <p class="borrow-login"><a href="<%= login_path %>" class="login-details-button">Login</a> to borrow this book.</p>
+        <% end %>
+    </div>
+</div>

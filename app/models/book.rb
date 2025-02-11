@@ -12,4 +12,8 @@ class Book < ApplicationRecord
     def mark_as_returned
         update(available:true)
     end
+
+    def borrowed?
+        borrowings.exists?
+    end
 end

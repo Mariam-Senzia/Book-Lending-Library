@@ -1,2 +1,24 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h2 class="profile-title">Borrowed Books</h2>
+
+<% if @borrowed_books.any? %>
+    <div class="profile-books-container">
+        <% @borrowed_books.each do |book| %>
+            <% borrowing = Borrowing.find_by(user: current_user, book: book) %>
+            <div class="profile-book-card">
+                <div class="profile-book-image">
+                    <img src="<%= book.image_url %>" alt="<%= book.title %> cover" class="book-image">
+                </div>
+
+                <div class="profile-book-details">
+                    <h3><%= book.title %></h3>
+                    <p>Author: <%= book.author %></p>
+                    <p>Due Date: <%= borrowing.due_date.strftime("%B %d, %Y") if borrowing %></p>
+
+                    <%= button_to 'Return', return_book_borrowing_path(borrowing), method: :delete, class: 'return-profile-button' %>
+                </div>
+            </div> 
+        <% end %>
+    </div>
+<% else %>
+    <p>You have not borrowed any books yet.</p>
+<% end %>
