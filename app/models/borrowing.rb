@@ -5,8 +5,8 @@ class Borrowing < ApplicationRecord
   validate :book_not_already_borrowed
 
   def book_not_already_borrowed
-    if book.borrowings.exists?
+    if book.present? && book.borrowings.exists?
       errors.add(:book, "is already borrowed")
     end
-  end
+  end  
 end

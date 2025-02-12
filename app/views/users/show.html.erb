@@ -14,7 +14,7 @@
                     <p>Author: <%= book.author %></p>
                     <p>Due Date: <%= borrowing.due_date.strftime("%B %d, %Y") if borrowing %></p>
 
-                    <%= button_to 'Return', return_book_borrowing_path(borrowing), method: :delete, class: 'return-profile-button' %>
+                    <%= button_to 'Return', return_book_borrowing_path(book.id), method: :delete, class: 'return-profile-button' %>
                 </div>
             </div> 
         <% end %>

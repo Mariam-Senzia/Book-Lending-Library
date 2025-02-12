@@ -5,14 +5,6 @@ class Book < ApplicationRecord
     has_many :borrowings 
     has_many :users, through: :borrowings
 
-    def mark_as_borrowed
-        update(available: false)
-    end
-
-    def mark_as_returned
-        update(available:true)
-    end
-
     def borrowed?
         borrowings.exists?
     end
