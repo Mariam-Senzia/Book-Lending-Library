@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_signed_in?
-    !current_user.nil? # Returns true if a user is signed in
+    !current_user.nil? 
   end
 
   def authenticate_user!

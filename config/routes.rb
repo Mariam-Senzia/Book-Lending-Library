@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "books#index"
   resources :books, only: [:index, :show] do
     member do
-      post :borrow
+      patch :borrow
     end
   end
 
