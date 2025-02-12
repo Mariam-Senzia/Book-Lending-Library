@@ -17,7 +17,7 @@
             <% else %>
                 <% borrowing = Borrowing.find_by(user: current_user, book: @book) %>
                 <% if borrowing %>
-                    <%= button_to 'Return Book', return_book_borrowing_path(borrowing), method: :delete, class: 'return-button' %>
+                    <%= button_to 'Return Book', return_book_borrowing_path(@book.id), method: :delete, class: 'return-button' %>
                 <% else %>
                     <p class='book-borrowed'><strong>Oops!</strong> This book is currently borrowed. Please check out our other available books!</p>  
                 <% end %>
