@@ -27,4 +27,27 @@ class AuthControllerTest < ActionDispatch::IntegrationTest
     json_response = JSON.parse(response.body)
     assert_equal "Invalid email or password", json_response["error"]
   end
+
+  test "should get signup page" do
+    get signup_url
+    assert_response :success
+
+    assert_select "h2", "Sign Up"
+    assert_select "form" 
+    assert_select "input[name='user[name]']"
+    assert_select "input[name='user[email]']"
+    assert_select "input[name='user[password]']"
+    assert_select "input[type='submit'][value='Sign Up']"
+  end
+
+  test "should get login page" do
+    get login_url
+    assert_response :success
+    
+    assert_select "h2", "Login"
+    assert_select "form"
+    assert_select "input[name='email']"
+    assert_select "input[name='password']"
+    assert_select "input[type='submit'][value='Login']"
+  end
 end
