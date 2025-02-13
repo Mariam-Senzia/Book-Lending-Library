@@ -13,7 +13,7 @@
 
         <% if user_signed_in? %>
             <% if @book.available %>
-                <%= button_to 'Borrow Book', borrow_book_path(@book), method: :post, class: 'borrow-button' %>
+                <%= button_to 'Borrow Book', borrow_book_path(@book), method: :patch, class: 'borrow-button' %>
             <% else %>
                 <% borrowing = Borrowing.find_by(user: current_user, book: @book) %>
                 <% if borrowing %>

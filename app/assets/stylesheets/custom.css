@@ -159,6 +159,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 10rem;
+    border-radius: 10px;
 }
 
 .login-title {
@@ -224,6 +225,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 10rem;
+    border-radius: 10px;
 }
 
 .signup-title {
@@ -330,4 +332,84 @@
 
 .no-books {
     text-align: center;
+}
+
+/* Responsive media queries */
+@media screen and (max-width: 440px) {
+    .book-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .book-image {
+        height: 80vh;
+        width: 25vw;
+    }
+    .book-details h3,p{
+        font-size: medium;
+    }
+    .book-details-container {
+        width: 70vw;
+    }
+    .book-details-image {
+        width: 70vw;
+    }
+    .borrow-button {
+        width: 35vw;
+    }
+    .profile-book-card {
+        width: 85vw;
+    }
+    .profile-book-details {
+        margin-left: 5rem;
+        margin-top: -1rem;
+    }
+    .login-container {
+        width: 70vw;
+        margin-top: 4.5rem;
+    }
+    .signup-container {
+        width: 70vw;
+        margin-top: 3.5rem;
+    }
+    .return-button {
+        width: 35vw;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .book-image {
+        height: 19vh;
+        width: 16vw;
+    }
+    .book-details-container {
+        width: 50vw;
+    }
+    .book-details-image {
+        width: 50vw;
+    }
+    .borrow-button {
+        width: 20vw;
+    }
+    .return-button {
+        width: 20vw;
+    }
+    .profile-book-card {
+        width: 60vw;
+    }
+    .profile-book-details {
+        margin-left: 5rem;
+    }
+    .login-container {
+        width: 60vw;
+        margin-top: 13rem;
+    }
+    .signup-container {
+        width: 70vw;
+        margin-top: 11rem;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .book-container {
+        max-width: 800px;
+    }
 }
